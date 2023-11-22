@@ -18,7 +18,7 @@ int main(int argc, char** argv)
     float average_gray;
     Mat img;
 
-    if(argv > 1){
+    if(argc > 1){
         img = imread(argv[1], IMREAD_COLOR);
     }
     else{
