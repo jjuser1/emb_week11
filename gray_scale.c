@@ -22,7 +22,7 @@ int main(int argc, char** argv)
         img = imread(argv[1], IMREAD_COLOR);
     }
     else{
-        img = imread("Lenna.png", IMREAD_COLOR)
+        img = imread("Lenna.png", IMREAD_COLOR);
     }
 
     if(img.empty()){
