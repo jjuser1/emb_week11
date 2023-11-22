@@ -41,7 +41,7 @@ int main(int argc, char** argv)
         cap.read(img);
         if(img.empty()) break;
         video.write(img);
-        count++
+        count++;
     }
 
     cap.release();
