@@ -35,7 +35,7 @@ int main(int argc, char** argv) {
 	VideoWriter video("outcpp.avi", cv::VideoWriter::fourcc('M', 'J', 'P', 'G'), 10, Size(frame_width, frame_height));
 
 	printf("Open Camera\n");
-	Mat img, img1;
+	Mat img;
 	int count = 0; int max;
 
 	if (argc > 1) {
@@ -49,18 +49,16 @@ int main(int argc, char** argv) {
 		cap.read(img);
 		if (img.empty()) break;
 		
-		img1 = img.clone();
-		
 
-		if (img1.empty()) {
+		if (img.empty()) {
 			printf("image load error\n");
 			return -1;
 		}
 
-		height = img1.rows;
-		width = img1.cols;
+		height = img.rows;
+		width = img.cols;
 		Mat gray(height, width, CV_8UC1);
-		cvtColor(img1, gray, COLOR_BGR2GRAY);
+		cvtColor(img, gray, COLOR_BGR2GRAY);
 
 		Mat sobelX,sobelY,sobel;
 
