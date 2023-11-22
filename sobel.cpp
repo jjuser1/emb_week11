@@ -65,8 +65,12 @@ int main(int argc, char** argv) {
 		Sobel(gray, sobelX, CV_8U, 1, 0);
 		Sobel(gray, sobelY, CV_8U, 0, 1);
 		sobel = abs(sobelX) + abs(sobelY);
+		
+		Mat sobel_color;
 
-		video.write(sobel);
+		cvtColor(sobel, sobel_color,COLOR_GRAY2BGR);
+
+		video.write(sobel_color);
 		count++;
 	}
 
